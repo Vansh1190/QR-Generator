@@ -1,6 +1,5 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+
 export default function Home(props){
     function displayError (){
         setError(
@@ -13,7 +12,7 @@ export default function Home(props){
     
         )
       }
-      const history = useNavigate();
+      // const history = useNavigate();
       const [error,setError] = useState([]);
       const [QrImgLink] = useState([])
     return(
@@ -38,8 +37,8 @@ export default function Home(props){
             }
             
             setTimeout(async() => {
-                
-                history("/GenerateQr/" + c);
+                window.location.href = ("https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl=" + c)
+                // history("/GenerateQr/" + c);
           
         }, 500);
       }}>
